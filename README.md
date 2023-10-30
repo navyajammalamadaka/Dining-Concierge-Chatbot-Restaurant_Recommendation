@@ -1,28 +1,28 @@
 # Dining-Concierge-Chatbot-Restaurant_Recommendation
 
-This is a Amazon Web Service-based chatbot that recommends restaurants to users on the basis of entered requirements such as - Number of people, Cuisine, Time of the day, etc provided via interactive conversations. Several microservices were used in synergy to create this serverless, microservice-driven web application prototype.<br/>
+This is an Amazon Web Service-based chatbot that recommends restaurants to users on the basis of entered requirements such as - Number of people, Cuisine, Time of the day, etc provided via interactive conversations. Several microservices were used in synergy to create this serverless, microservice-driven web application prototype.<br/>
 
-We gather all of our code here. Note that the code here cannot be run directly because we use AWS to delopy this application. Almost half of the work is to create and configure AWS components. The used AWSs are listed as followings:<br/>
+We gather all of our code here. Note that the code here cannot be run directly because we use AWS to deploy this application. Almost half of the work is to create and configure AWS components. The used AWSs are listed as followings:<br/>
 
 **AWS S3**
 
-● It stores all frontend files in a bucket. All HTML,CSS and Js files are stored in the created S3 bucket.<br/>
+● It stores all frontend files in a bucket. All HTML, CSS, and Js files are stored in the created S3 bucket.<br/>
 ● Link to run the chatbot --> http://baltias1.s3-website-us-east-1.amazonaws.com
 
 *Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.*<br/>
 
 **Amazon API Gateway** (RESTful APIs)
 
-● API Gateway can generate an SDK for your API, which can be used in the frontend. It will take care of calling your API, as well as session signing the API calls.<br/>
-*Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the "front door" for applications to access data, business logic, or functionality from your backend services. Using API Gateway, you can create RESTful APIs and WebSocket APIs that enable real-time two-way communication applications. API Gateway supports containerized and serverless workloads, as well as web applications.*
+● API Gateway can generate an SDK for your API, which can be used in the front end. It will take care of calling your API, as well as session signing the API calls.<br/>
+*Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs are the "front door" for applications to access data, business logic, or functionality from your backend services. Using API Gateway, you can create RESTful APIs and WebSocket APIs that enable real-time two-way communication applications. API Gateway supports containerized and serverless workloads, as well as web applications.*
 
 **AWS Lambda function**
 
-● Lamda functions handle request from front-end.<br/>
-● In our project we have total 3 lambda functions. <br/>
+● Lambda functions to handle requests from the front end.<br/>
+● In our project we have a total of 3 lambda functions. <br/>
 1) LF0 is connected with API gateway and lambda - Receives requests from API gateway and sends to Lex.<br/>
-2) LF1  helps Lex in returning the response, handling the cases and connecting the obtained values.<br/>
-3) LF2 for searching in elastic search and returning the restaurant suggestion. LF1 also handles the part  when a successful requests is made to Lex (all intents get filled up) will add the request in SQS (Simple Queue Service). SQS will trigger LF2.<br/>
+2) LF1  helps Lex in returning the response, handling the cases, and connecting the obtained values.<br/>
+3) LF2 for searching in elastic search and returning the restaurant suggestion. LF1 also handles the part  when a successful request is made to Lex (all intents get filled up) and will add the request in SQS (Simple Queue Service). SQS will trigger LF2.<br/>
 *AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.*<br/>
 
 **Amazon Lex**
@@ -67,12 +67,6 @@ We gather all of our code here. Note that the code here cannot be run directly b
 <br/><br/>
 <p style="text-align:center;"><img width="929" alt="Assignment 1 architecture diagram (2)" src="https://user-images.githubusercontent.com/85683392/136674276-74ab5584-40a6-445a-abe0-b5de49488c19.png">
 
-###### Screenshots
- 
 
-![Screenshot (184)__01](https://user-images.githubusercontent.com/85683392/136675108-bca50815-a9d4-43b7-83ab-be107b375e84.png)
-![Screenshot (185)__01](https://user-images.githubusercontent.com/85683392/136675113-da6b00c6-e131-4aed-b938-48658b86637c.png)
-![Screenshot (186)__01](https://user-images.githubusercontent.com/85683392/136675115-23f529d7-bac5-42a6-aeb4-f8c36bde4868.png)
-![Screenshot (187)__01](https://user-images.githubusercontent.com/85683392/136675118-97904a12-715b-469a-8891-6a0acfd36a30.png)
 
 
